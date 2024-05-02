@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Copilot Search",
+    "version": "1.0",
+    "description": "Search within a text field on copilot.microsoft.com",
+    "permissions": [
+      "tabs",
+      "storage"
+    ],
+    "host_permissions": [
+      "https://copilot.microsoft.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "omnibox": {
+      "keyword": "copilot"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://copilot.microsoft.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
